@@ -1,4 +1,4 @@
-#Pedro Luis
+
 from numpy import False_, fabs, true_divide
 import TCVar  # Teoría de conjuntos variables
 #import TeoriaConjuntos as tc
