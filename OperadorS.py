@@ -1,5 +1,5 @@
 
-from sys import flags, float_repr_style
+from sys import flags, float_repr_style 
 
 from numpy.lib.twodim_base import triu_indices_from
 import TCVar
