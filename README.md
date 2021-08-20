@@ -1,6 +1,9 @@
 # Operaciones entre conjuntos
 
-Aplicación para realizar operacioens entre conjuntos.
+Aplicación para realizar operaciones entre conjuntos.
 
-* Python
-* Streamlint (librería webapp)
+## Librerías Python and Anaconda
+
+- Streamlint
+- Pandas
+- Numpy
