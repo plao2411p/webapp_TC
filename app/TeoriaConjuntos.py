@@ -1,5 +1,4 @@
 
-from pandas.core.frame import DataFrame
 import TCVar  # Teoría de conjuntos variables
 import DS  # Depurador de String
 import OperadorS
@@ -61,33 +60,34 @@ st.title('Teoría de Conjuntos')
 
 Inicio()
 
-tex_input = st.text_input('Ingrese la operación:')
+tex_input = st.text_input('Ingrese la op:')
 
 if len(tex_input) != 0:
     # Return Bool, String
-    verificadorS, operación = DS.DepuradorString(tex_input)
+    verificadorS, op = DS.DepuradorString(tex_input)
     if verificadorS:
-        if len(operación) == 1:
+        if len(op) == 1:
             st.write('Operación: ')
             st.write(
                 """
                 ## {} = {}
-                """.format(operación, TCVar.SolicitarConjunto(operación))
+                """.format(op, TCVar.SolicitarConjunto(op))
             )
             VaciarVariables()
         else:
-            S, V, Data = OperadorS.SeparadorOperaciones(operación)
+            #S, V, Data = OperadorS.SeparadorOperaciones(op)
+            S, V = OperadorS.SeparadorOperaciones(op)
             st.write(
                 """
                 ### Operación: 
                 ## {} = {}
                 """.format(S, V)
             )
-            st.markdown(Data.to_markdown())
+            #st.markdown(Data.to_markdown())
             VaciarVariables()
             OperadorS.Data = None
     else:
-        st.write(operación)
+        st.write(op)
         VaciarVariables()
         OperadorS.Data = None
 else:

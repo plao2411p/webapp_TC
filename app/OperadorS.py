@@ -1,7 +1,5 @@
 
-from sys import flags, float_repr_style 
-
-from numpy.lib.twodim_base import triu_indices_from
+import pandas as pd
 import TCVar
 
 n = int(len(TCVar.U)+1)  # filas
@@ -81,7 +79,7 @@ def SeparadorOperaciones(cadena):  # return String,Array,Dataframe
         ind.append(i)
     ind.append('Orden:')
     global Data
-    Data = TCVar.pd.DataFrame(
+    Data = pd.DataFrame(
         TCVar.np.full([n, m], 0, 'bool'),
         index=ind, columns=col
     )
@@ -94,7 +92,7 @@ def SeparadorOperaciones(cadena):  # return String,Array,Dataframe
                 Data.loc[i, j] = False
 
     copiaN_Total = TCVar.N_Total
-    DataO = TCVar.pd.DataFrame(
+    DataO = pd.DataFrame(
         TCVar.np.full([TCVar.N_Total, 2], False, 'bool'),
         columns=['Posición', 'Estado']
     )
@@ -145,4 +143,4 @@ def SeparadorOperaciones(cadena):  # return String,Array,Dataframe
     for i in Data.iloc[0:-1, -1].to_numpy():
         if i != None:
             conjuntov.append(i)
-    return Data.columns[-2], conjuntov, Data
+    return Data.columns[-2], conjuntov#, Data

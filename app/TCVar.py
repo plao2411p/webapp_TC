@@ -1,22 +1,5 @@
 
 import numpy as np
-import pandas as pd
-import sys
-from os import system, name
-
-# función para limpiar terminal
-
-
-def clear():
-
-    # para windows
-    if name == 'nt':
-        _ = system('cls')
-
-    # para mac y linux
-    else:
-        _ = system('clear')
-
 
 Operadores = "unindids"
 Conjuntos = "UABC"
